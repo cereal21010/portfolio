@@ -1,0 +1,44 @@
+ {{#layout}}
+ 
+
+
+
+<ul class="list-group">
+	<li class="list-group-item">
+		<div style="font-weight: bold;">{{userId}}</div>
+		
+	</li>
+	<li class="list-group-item">
+	
+	{{#boardDto}}
+	<form action="/board/updateWriter/{{seq}}" method="post">
+		<input type="text" name="title" class="form-control mt-4 mb-2"
+			placeholder="제목을 입력해주세요." value="{{title}}" disabled="disabled">
+		<div class="form-group">
+			<textarea class="form-control" rows="10" name="contents"
+				placeholder="내용을 입력해주세요" required>{{contents}}</textarea>
+		</div>
+		<button type="submit" class="btn btn-secondary mb-3">제출하기</button>
+	</form>
+	{{/boardDto}}
+	
+	{{^boardDto}}
+	<form action="writerAction" method="post">
+		<input type="text" name="title" class="form-control mt-4 mb-2"
+			placeholder="제목을 입력해주세요." required
+		>
+		<div class="form-group">
+			<textarea class="form-control" rows="10" name="contents"
+				placeholder="내용을 입력해주세요" required
+			></textarea>
+		</div>
+		<button type="submit" class="btn btn-secondary mb-3">제출하기</button>
+	</form>
+	{{/boardDto}}
+	
+	</li>
+</ul>
+
+
+
+{{/layout}}

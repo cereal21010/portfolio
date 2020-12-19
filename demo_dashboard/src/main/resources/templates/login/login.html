@@ -1,0 +1,34 @@
+{{#layout}}
+<div class="container">
+	<div class="row">
+		<div class="col-lg-4"></div>
+			<div class="col-lg-4">
+				<form method="post">
+					<!-- 아이디 -->
+					<div class="input-group my-2 mb-1">
+						<div class="input-group-prepend">
+							<span class="input-group-text" id="basic-addon1">ID</span>
+						</div>
+						<input type="text" name="username" class="form-control"
+							placeholder="Input ID" aria-label="Input ID"
+							aria-describedby="basic-addon1" required>
+					</div>
+					<!-- 패스워드 -->
+					<div class="input-group mb-3">
+						<div class="input-group-prepend">
+							<span class="input-group-text" id="basic-addon1">PW</span>
+						</div>
+						<input type="password" name="password" class="form-control"
+							placeholder="Input Password" aria-label="Input Password"
+							aria-describedby="basic-addon1" required>
+					</div>
+					<button type="submit" class="btn btn-dark btn-sm btn-block">
+							로그인 하기</button>
+				</form>		
+				<button type="button" class="btn btn-dark btn-sm btn-block mt-1"
+					onclick="location.href='/register'">회원가입 하기</button>
+			</div>
+		<div class="col-lg-4"></div>
+	</div>	
+</div>
+{{/layout}}

@@ -1,0 +1,61 @@
+{{#layout}}
+
+<form action="/board">
+		<div class="form-group row justify-content-end">
+				<div class="w100" style="padding-right:10px">
+					<select class="form-control form-control-sm" name="searchType" id="searchType">
+						<option value="title">제목</option>
+						<option value="writer">작성자</option>
+					</select>
+				</div>
+				<div class="w300" style="padding-right:10px">
+					<input type="text" class="form-control form-control-sm" name="searchValue" id="searchValue">
+				</div>
+				<div>
+					<button class="btn btn-sm btn-primary" type="submit">검색</button>
+				</div>
+		</div>
+</form>
+
+<table class="table table-hover">
+	<thead>
+		<tr>
+			<th scope="col" class="text-center">제목</th>
+			<th scope="col" class="text-center">글쓴이</th>
+			<th scope="col" class="text-center">작성일</th>
+			<th scope="col" class="text-center">조회수</th>
+		</tr>
+	</thead>	
+	<tbody>
+		{{#dboards}}
+		<tr>
+			<td style="width: 60%"><a href="/board/boardViewer/{{seq}}">{{title}}</a></td>
+			<td style="width: 10%">{{writer}}</td>
+			<td style="width: 20%">{{createdDate}}</td>
+		</tr>
+		{{/dboards}}
+	</tbody>
+</table>
+<div class="form-group row justify-content-end">
+<form action="/board/boardWriter" method="post">
+	<!-- 새글의 계층 정보 -->
+	<input type="hidden" name="bdGroup" value="-1">
+	<input type="hidden" name="bdOrder" value="0">
+	<input type="hidden" name="bdIndent" value="0">
+	<button type="submit" class="btn btn-secondary mb-3">새글쓰기</button>
+</form>
+</div>
+
+
+<nav aria-label="Page navigation" class="pull-right">
+	<ul class="pagination">
+		{{#page}}
+		<li class="page-item {{enabled}}">
+			<a class="page-link" data-value="{{value}}" tabindex="-1">{{cover}}</a>
+		</li>
+		{{/page}}
+	</ul>
+</nav>
+
+<script src="/js/paging.js"></script>
+{{/layout}}
