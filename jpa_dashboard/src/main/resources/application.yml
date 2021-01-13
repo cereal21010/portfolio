@@ -1,0 +1,26 @@
+
+spring:
+  datasource:
+    url:  jdbc:h2:tcp://localhost/~/dashboard
+    username: sa
+    password: 
+    driver-class-name: org.h2.Driver 
+
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibervate:
+        format_sql: true
+      
+      
+  mustache:
+    suffix: .html
+    expose-session-attributes: true
+    
+    
+logging.level:
+  org.hibernate.SQL: debug
+  org.hibernate.type: trace
+  
