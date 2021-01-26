@@ -1,11 +1,8 @@
-# portfolio
-포트폴리오 저장소
-
 ## 프로젝트명
 JPA_Dashboard
 
 ## 프로젝트 정보
-* 실행환경
+* 테스트 환경
   * 이클립스 내장 tomcat
   * H2 DB
 
@@ -15,6 +12,6 @@ JPA_Dashboard
   * 댓글 작성, 목록, 수정, 삭제, 대댓글 작성
   
 ## 프로젝트 사용 기술
-*Spring Boot()
-*Spring Secutiry(로그인 구현)
-*JPA(ORM)
+* Spring Boot
+* Spring Secutiry(로그인 구현)
+* JPA(ORM)
